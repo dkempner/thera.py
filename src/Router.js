@@ -4,9 +4,9 @@ import Personas from "./Personas";
 import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const column = `
+const column = css`
   height: 100%;
   display: flex;
   flex-direction: column;
