@@ -7,10 +7,7 @@ const PinkButton = styled(bs.Button)`
   color: pink;
 `;
 
-
 class Home extends Component {
-
-
   render() {
     return (
       <bs.Container>
@@ -18,9 +15,7 @@ class Home extends Component {
           <bs.Column sm={4} />
           <bs.Column sm={4}>
             <Link to="/personas">
-              <PinkButton primary>
-                Choose your therapist
-              </PinkButton>
+              <PinkButton primary>Choose your therapist</PinkButton>
             </Link>
           </bs.Column>
           <bs.Column sm={4} />
