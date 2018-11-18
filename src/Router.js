@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Home from "./Home";
 import Personas from "./Personas";
 import { BrowserRouter, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css"
 
 class Router extends Component {
   constructor(props) {
@@ -27,10 +27,10 @@ class Router extends Component {
         <React.Fragment>
           <div id="left" className="column">
             <div className="" id="top-left">
-              My App
+              <span className="padded">App Stuff</span>
             </div>
             <div className="bottom">
-              <ul className="list-unstyled">
+              <ul className="list-unstyled padded">
                 <li>Home</li>
                 <li>Projects</li>
                 <li>Users</li>
@@ -39,10 +39,10 @@ class Router extends Component {
           </div>
           <div id="right" className="column">
             <div id="top-right">
-              Other App-y stuff
+              <span className="padded">Other App Stuff</span>
             </div>
             <div className="bottom">
-              <div className="container">
+              <div className="padded">
                 {this.routes.map(route => (
                   <Route
                     key={route.path}

@@ -37,6 +37,7 @@ BODY {
 
 #left {
   flex-shrink: 0;
+  border-right: 1px solid black;
 }
 
 #right {
@@ -46,13 +47,19 @@ BODY {
 
 #top-left {
   flex-shrink: 0;
+  border-bottom: 1px solid black;
 }
 
 #top-right {
   flex-shrink: 0;
+  border-bottom: 1px solid black;
 }
 
 .bottom {
   flex-grow: 1;
   overflow-y: auto;
+}
+
+.padded {
+  padding: 20px !important;
 }
