@@ -3,17 +3,17 @@ code {
     monospace;
 }
 
-HTML {
+html {
   height: 100%;
 }
 
-BODY {
+body {
   height: 100%;
   width: 100%;
   overflow: hidden;
   margin: 0px;
   display: flex;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 #root {
@@ -22,42 +22,7 @@ BODY {
   overflow: hidden;
   margin: 0px;
   display: flex;
-  box-sizing: border-box
-}
-
-.column {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.full-height {
-  height: 100%;
-}
-
-#left {
-  flex-shrink: 0;
-  border-right: 1px solid black;
-}
-
-#right {
-  display: flex;
-  flex: 1
-}
-
-#top-left {
-  flex-shrink: 0;
-  border-bottom: 1px solid black;
-}
-
-#top-right {
-  flex-shrink: 0;
-  border-bottom: 1px solid black;
-}
-
-.bottom {
-  flex-grow: 1;
-  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .padded {

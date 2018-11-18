@@ -9,7 +9,9 @@ class Home extends Component {
           <bs.Column sm={4} />
           <bs.Column sm={4}>
             <Link to="/personas">
-              <bs.Button primary>Choose your therapist</bs.Button>
+              <bs.Button primary style={{ backgroundColor: "pink" }}>
+                Choose your therapist
+              </bs.Button>
             </Link>
           </bs.Column>
           <bs.Column sm={4} />

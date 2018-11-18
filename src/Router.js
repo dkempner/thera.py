@@ -4,6 +4,40 @@ import Personas from "./Personas";
 import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import styled from "styled-components";
+
+const column = `
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Left = styled.div`
+  ${column}
+  flex-shrink: 0;
+  border-right: 1px solid black;
+`;
+
+const TopLeft = styled.div`
+  flex-shrink: 0;
+  border-bottom: 1px solid black;
+`;
+
+const Bottom = styled.div`
+  flex-grow: 1;
+  overflow-y: auto;
+`;
+
+const Right = styled.div`
+  ${column}
+  display: flex;
+  flex: 1;
+`;
+
+const TopRight = styled.div`
+  flex-shrink: 0;
+  border-bottom: 1px solid black;
+`;
 
 class Router extends Component {
   constructor(props) {
@@ -25,23 +59,23 @@ class Router extends Component {
     return (
       <BrowserRouter>
         <React.Fragment>
-          <div id="left" className="column">
-            <div className="" id="top-left">
+          <Left>
+            <TopLeft>
               <span className="padded">App Stuff</span>
-            </div>
-            <div className="bottom">
+            </TopLeft>
+            <Bottom>
               <ul className="list-unstyled padded">
                 <li>Home</li>
                 <li>Projects</li>
                 <li>Users</li>
               </ul>
-            </div>
-          </div>
-          <div id="right" className="column">
-            <div id="top-right">
+            </Bottom>
+          </Left>
+          <Right>
+            <TopRight>
               <span className="padded">Other App Stuff</span>
-            </div>
-            <div className="bottom">
+            </TopRight>
+            <Bottom>
               <div className="padded">
                 {this.routes.map(route => (
                   <Route
@@ -52,8 +86,8 @@ class Router extends Component {
                   />
                 ))}
               </div>
-            </div>
-          </div>
+            </Bottom>
+          </Right>
         </React.Fragment>
       </BrowserRouter>
     );
