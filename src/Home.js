@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import * as bs from "styled-bootstrap-components";
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-4" />
-          <div className="col-sm-4 text-center">
+      <bs.Container>
+        <bs.Row>
+          <bs.Column sm={4} />
+          <bs.Column sm={4}>
             <Link to="/personas">
-              <button className="btn btn-primary">Choose your therapist</button>
+              <bs.Button primary>Choose your therapist</bs.Button>
             </Link>
-          </div>
-          <div className="col-sm-4" />
-        </div>
-      </div>
+          </bs.Column>
+          <bs.Column sm={4} />
+        </bs.Row>
+      </bs.Container>
     );
   }
 }
