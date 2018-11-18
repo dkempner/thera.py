@@ -9,6 +9,7 @@ HTML {
 
 BODY {
   height: 100%;
+  width: 100%;
   overflow: hidden;
   margin: 0px;
   display: flex;
@@ -17,6 +18,7 @@ BODY {
 
 #root {
   height: 100%;
+  width: 100%;
   overflow: hidden;
   margin: 0px;
   display: flex;
@@ -35,6 +37,11 @@ BODY {
 
 #left {
   flex-shrink: 0;
+}
+
+#right {
+  display: flex;
+  flex: 1
 }
 
 #top-left {

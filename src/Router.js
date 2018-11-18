@@ -3,6 +3,7 @@ import Home from "./Home";
 import Personas from "./Personas";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 class Router extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Router extends Component {
               Other App-y stuff
             </div>
             <div className="bottom">
-              <div>
+              <div className="container">
                 {this.routes.map(route => (
                   <Route
                     key={route.path}

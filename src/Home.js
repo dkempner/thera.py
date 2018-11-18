@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 class Home extends Component {
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-sm-4"></div>
                     <div className="col-sm-4 text-center">
