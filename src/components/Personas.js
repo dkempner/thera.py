@@ -15,10 +15,10 @@ class Personas extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.therapist ? (
-          <p>Your current therapist is {this.props.therapist.name}</p>
+        {this.props.therapist.name ? (
+          <p>{this.props.therapist.name} is your therapist.</p>
         ) : (
-          <p>Pick a therapist</p>
+          <p>Pick a therapist.</p>
         )}
         <ul className="list-unstyled">
           {this.therapists.map(therapist => (

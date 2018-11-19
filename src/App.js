@@ -49,7 +49,7 @@ const TopRight = styled.div`
   border-bottom: 1px solid black;
 `;
 
-class Router extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.routes = [
@@ -110,4 +110,4 @@ class Router extends Component {
   }
 }
 
-export default Router;
+export default App;
