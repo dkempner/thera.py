@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import Home from "./Home";
-import Personas from "./Personas";
+import { Provider, connect } from "react-redux";
+import StatusBar from "./components/StatusBar";
+import Home from "./components/Home";
+import Personas from "./components/Personas";
 import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import styled, { css } from "styled-components";
+import store from "./store";
+
+const padded = css`
+  padding: 20px !important;
+`;
 
 const column = css`
   height: 100%;
@@ -13,17 +20,19 @@ const column = css`
 `;
 
 const Left = styled.div`
-  ${column}
+  ${column};
   flex-shrink: 0;
   border-right: 1px solid black;
 `;
 
 const TopLeft = styled.div`
+  ${padded};
   flex-shrink: 0;
   border-bottom: 1px solid black;
 `;
 
 const Bottom = styled.div`
+  ${padded};
   flex-grow: 1;
   overflow-y: auto;
 `;
@@ -35,6 +44,7 @@ const Right = styled.div`
 `;
 
 const TopRight = styled.div`
+  ${padded};
   flex-shrink: 0;
   border-bottom: 1px solid black;
 `;
@@ -58,39 +68,46 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-        <React.Fragment>
-          <Left>
-            <TopLeft>
-              <span className="padded">App Stuff</span>
-            </TopLeft>
-            <Bottom>
-              <ul className="list-unstyled padded">
-                <li>Home</li>
-                <li>Projects</li>
-                <li>Users</li>
-              </ul>
-            </Bottom>
-          </Left>
-          <Right>
-            <TopRight>
-              <span className="padded">Other App Stuff</span>
-            </TopRight>
-            <Bottom>
-              <div className="padded">
-                {this.routes.map(route => (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.component}
-                  />
-                ))}
-              </div>
-            </Bottom>
-          </Right>
-        </React.Fragment>
+        <Provider store={store}>
+          <React.Fragment>
+            <Left>
+              <TopLeft>
+                <span>App Stuff</span>
+              </TopLeft>
+              <Bottom>
+                <ul className="list-unstyled padded">
+                  <li>Home</li>
+                  <li>Projects</li>
+                  <li>Users</li>
+                </ul>
+              </Bottom>
+            </Left>
+            <Right>
+              <TopRight>
+                <div>
+                  <span className="float-left">Other App Stuff</span>
+                  <StatusBar />
+                  <span className="clearfix" />
+                </div>
+              </TopRight>
+              <Bottom>
+                <div>
+                  {this.routes.map(route => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      exact={route.exact}
+                      component={route.component}
+                    />
+                  ))}
+                </div>
+              </Bottom>
+            </Right>
+          </React.Fragment>
+        </Provider>
       </BrowserRouter>
     );
   }
 }
+
 export default Router;
