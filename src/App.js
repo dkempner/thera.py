@@ -10,7 +10,7 @@ import styled, { css } from "styled-components";
 import store from "./store";
 
 const padded = css`
-  padding: 20px !important;
+  padding: 1rem !important;
 `;
 
 const column = css`
@@ -75,7 +75,7 @@ class App extends Component {
                 <span>App Stuff</span>
               </TopLeft>
               <Bottom>
-                <ul className="list-unstyled padded">
+                <ul className="list-unstyled">
                   <li>Home</li>
                   <li>Projects</li>
                   <li>Users</li>
@@ -86,7 +86,9 @@ class App extends Component {
               <TopRight>
                 <div>
                   <span className="float-left">Other App Stuff</span>
-                  <StatusBar />
+                  <span className="float-right">
+                    <StatusBar className="float-right" />
+                  </span>
                   <span className="clearfix" />
                 </div>
               </TopRight>

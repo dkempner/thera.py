@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class StatusBar extends Component {
   render() {
-    return <span className="float-right">{this.props.therapist.name}</span>;
+    return <span>{this.props.therapist.name}</span>;
   }
 }
 

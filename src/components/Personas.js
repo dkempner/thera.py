@@ -16,7 +16,7 @@ class Personas extends Component {
     return (
       <React.Fragment>
         {this.props.therapist.name ? (
-          <p>{this.props.therapist.name} is your therapist.</p>
+          <p>{this.props.therapist.name} is yourz therapist.</p>
         ) : (
           <p>Pick a therapist.</p>
         )}
